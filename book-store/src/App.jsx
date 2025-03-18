@@ -5,6 +5,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import BooksDisplay from "./screens/BooksDisplay";
 import BookSearch from "./screens/BookSearch";
+import BookCreate from "./screens/BookCreate";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/books" element={<BooksDisplay />} />
           <Route path="/search" element={<BookSearch />} />
+          <Route path="/create" element={<BookCreate />} />
         </Routes>
       </BrowserRouter>
     </>
