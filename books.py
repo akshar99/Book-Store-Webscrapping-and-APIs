@@ -76,6 +76,7 @@ async def showBooks(db: Session = Depends(get_db)):
 @app.get("/books/{book_name}")  
 async def showBookbyName(book_name: str, db: Session = Depends(get_db)):
     books = db.query(Books).filter(Books.name.ilike(f"%{book_name}")).all()
+    # print(book_name)
     if not books:
         raise HTTPException(status_code=400, detail="book not found")
     return books
